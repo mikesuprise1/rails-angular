@@ -14,11 +14,11 @@ export class DocumentsComponent implements OnInit {
 	pageTitle: string = "Document Dashboard"
 	documents: Document[];
 	errorMessage: string;
-	mode = "Observable" ;
+	mode = "Observable";
 
 	constructor(
 		private documentService: DocumentService
-		) {}
+	) {}
 
 	ngOnInit() {
 		let timer = Observable.timer(0, 5000);
@@ -30,6 +30,6 @@ export class DocumentsComponent implements OnInit {
 				.subscribe(
 					documents => this.documents = documents,
 					error => this.errorMessage = <any>error
-					);
+				);
 	}
 }
